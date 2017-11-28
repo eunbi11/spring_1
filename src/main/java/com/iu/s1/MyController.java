@@ -18,7 +18,6 @@ public class MyController {
 	
 	@RequestMapping(value="/notice/noticeView")
 	public String go2(){
-		
 		return"notice/noticeView";
 	}
 	

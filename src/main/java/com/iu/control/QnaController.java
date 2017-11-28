@@ -23,12 +23,8 @@ public class QnaController {
 	@RequestMapping(value="qnaWrite",method=RequestMethod.GET)
 	public void write(){} 
 	
-	
-	
 	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
 	public String write(QnaDTO qnaDTO,String title ){ /*파라미터 이름과 동일해야함*/
-		
-		
 		System.out.println("title : "+qnaDTO.getTitle());
 		System.out.println(title);
 		System.out.println("writer : "+qnaDTO.getWriter());
@@ -40,7 +36,11 @@ public class QnaController {
 		return "redirect: ./qnaList?curPage=5";
 	}
 	
+
 	
+
+	
+
 /*	@RequestMapping(value="qnaWrite", method=RequestMethod.POST)
 	public String write(HttpServletRequest request){
 		String title=request.getParameter("title");
@@ -65,6 +65,14 @@ public class QnaController {
 		qnaDTO.setAge(25);
 		mv.addObject("view", qnaDTO);
 		mv.setViewName("qna/qnaList");
+		System.out.println("curPage : "+curPage);
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="qnaList" ,method={RequestMethod.GET, RequestMethod.POST}) /*두가지 다 쓰고싶을때*/
+	public ModelAndView list1(ModelAndView mv, @RequestParam(defaultValue="0" ,required=false)int curPage){
+	
 		System.out.println("curPage : "+curPage);
 		
 		return mv;

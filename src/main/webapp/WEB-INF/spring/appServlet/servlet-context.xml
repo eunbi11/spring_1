@@ -14,10 +14,12 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	
 	<!-- 루트 추가하고 싶을때 -->
 	<resources location="/etc/" mapping="./etc/**"/> <!--etc로 시작하는 애들은 etc(location)가서 찾아  -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" /> <!--주소앞에 value를 붙여라  -->
 		<beans:property name="suffix" value=".jsp" /><!--주소뒤에 value를 붙여라  -->
